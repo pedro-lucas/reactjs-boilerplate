@@ -14,5 +14,18 @@ if (env.__DEV__) {
 
    tron.clear();
 
+   // Override do console em dev para o reactotron
+   const yeOldeConsoleLog = console.log;
+
+   console.log = (...args) => {
+      yeOldeConsoleLog(...args);
+
+      Reactotron.display({
+         name: 'CONSOLE.LOG',
+         value: args,
+         preview: args.length > 1 ? JSON.stringify(args) : args[0],
+      });
+   };
+
    console.tron = tron;
 }
