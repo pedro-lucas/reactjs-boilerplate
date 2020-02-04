@@ -2,10 +2,15 @@ import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import qs from 'querystring';
 
-import { signInSuccess, signFailure } from './actions';
 import history from '~/services/history';
 import api from '~/services/api';
 import env from '~/config/Environment';
+import {
+   signInSuccess,
+   signFailure,
+   SIGN_IN_REQUEST,
+   SIGN_OUT,
+} from './actions';
 
 export function* signIn({ payload }) {
    try {
@@ -55,6 +60,6 @@ export function signOut() {
 
 export default all([
    takeLatest('persist/REHYDRATE', setToken),
-   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-   takeLatest('@auth/SIGN_OUT', signOut),
+   takeLatest(SIGN_IN_REQUEST, signIn),
+   takeLatest(SIGN_OUT, signOut),
 ]);
