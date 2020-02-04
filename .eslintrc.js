@@ -40,6 +40,7 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "consistent-return": "off",
+    "jsx-a11y/anchor-is-valid": 0,
     "no-console": "off"
   },
   settings: {

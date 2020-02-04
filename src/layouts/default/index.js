@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Wrapper } from './styles';
-import Header from '~/components/Header';
+import { Wrapper, Content } from './styles';
+import Navbar from '~/components/Navbar';
+import Sidebar from '~/components/Sidebar';
 
 export default function DefaultLayout({ children }) {
    return (
       <Wrapper>
-         <Header />
-         {children}
+         <Sidebar />
+         <Content>
+            <Navbar />
+            {children}
+         </Content>
       </Wrapper>
    );
 }

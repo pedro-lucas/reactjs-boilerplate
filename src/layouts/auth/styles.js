@@ -70,3 +70,12 @@ export const Content = styled.div`
       }
    }
 `;
+
+export const ContainerImage = styled.div`
+   width: 360px;
+`;
+
+export const imgStyle = {
+   width: '100px',
+   height: 'auto',
+};

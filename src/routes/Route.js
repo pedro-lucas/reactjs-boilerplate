@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { store } from '~/store';
-import AuthLayout from '~/screens/_layouts/auth';
-import DefaultLayout from '~/screens/_layouts/default';
+import AuthLayout from '~/layouts/auth';
+import DefaultLayout from '~/layouts/default';
 
 export default function RouteWrapper({
    component: Component,
@@ -17,7 +17,7 @@ export default function RouteWrapper({
    }
 
    if (signed && rest.path === '/') {
-      return <Redirect to="/home" />;
+      return <Redirect to="/admin" />;
    }
 
    const Layout = signed ? DefaultLayout : AuthLayout;
