@@ -32,7 +32,7 @@ export function* signIn({ payload }) {
 
       yield put(signInSuccess(token, user));
 
-      history.push('/home');
+      history.push('/admin');
    } catch (err) {
       toast.error('Falha na autenticação.');
       yield put(signFailure());
