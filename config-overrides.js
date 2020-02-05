@@ -15,7 +15,7 @@ module.exports = {
       ];
       config.moduleDirectories = ['node_modules', 'src'];
       config.moduleNameMapper = {
-         '^~/(.*)': '<rootDir>/src/$1.js',
+         '^~/(.*)': '<rootDir>/src/$1',
       };
       return config;
    },

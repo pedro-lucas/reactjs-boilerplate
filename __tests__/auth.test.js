@@ -2,7 +2,7 @@ import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { signIn } from '~/store/modules/auth/sagas';
 import { SIGN_IN_SUCCESS, SIGN_FAILURE } from '~/store/modules/auth/actions';
 
-test('Deve permitir o login do usuário', () => {
+it('Deve permitir o login do usuário', () => {
    const gen = cloneableGenerator(signIn)({
       payload: { username: 'username', password: 'password' },
    });
@@ -14,7 +14,7 @@ test('Deve permitir o login do usuário', () => {
    );
 });
 
-test('Deve gerar uma exceção no login do usuário', () => {
+it('Deve gerar uma exceção no login do usuário', () => {
    const gen = cloneableGenerator(signIn)({
       payload: { username: 'username', password: 'password' },
    });
