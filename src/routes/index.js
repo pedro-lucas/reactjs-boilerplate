@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import Route from './Route';
+import Route from './RouteWrapper';
 
 import LogIn from '../screens/LogIn';
 import Dashboard from '../screens/Dashboard';
